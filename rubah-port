@@ -1,0 +1,91 @@
+#!/bin/bash
+clear
+
+# get the VPS IP
+#ip=`ifconfig venet0:0 | grep 'inet addr' | awk {'print $2'} | sed s/.*://`
+MYIP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
+#MYIP=$(ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{ print $1}' | head -1)
+if [ "$MYIP" = "" ]; then
+	MYIP=$(wget -qO- ipv4.icanhazip.com)
+fi
+#myip=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
+
+flag=0
+
+echo
+
+	#MYIP=$(ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{ print $1}' | head -1)
+	#if [ "$MYIP" = "" ]; then
+		#MYIP=$(wget -qO- ipv4.icanhazip.com)
+	#fi
+    
+echo "--------------- Selamat datang di Server - IP: $myip ---------------"
+	cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
+	cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
+	freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
+	tram=$( free -m | awk 'NR==2 {print $2}' )
+	swap=$( free -m | awk 'NR==4 {print $2}' )
+	up=$(uptime|awk '{ $1=$2=$(NF-6)=$(NF-5)=$(NF-4)=$(NF-3)=$(NF-2)=$(NF-1)=$NF=""; print }')
+
+	echo -e "\e[032;1mCPU model:\e[0m $cname"
+	echo -e "\e[032;1mNumber of cores:\e[0m $cores"
+	echo -e "\e[032;1mCPU frequency:\e[0m $freq MHz"
+	echo -e "\e[032;1mTotal amount of ram:\e[0m $tram MB"
+	echo -e "\e[032;1mTotal amount of swap:\e[0m $swap MB"
+	echo -e "\e[032;1mSystem uptime:\e[0m $up"
+	echo "------------------------------------------------------------------------------"
+echo "Port Apa Yang Ingin Anda Rubah?"
+	    echo ""
+		echo "1) Dropbear ( Port Standar Nya 443 )"
+		echo "2) Squid ( Port Standar Nya 8080 )"
+		echo "3) OpenVPN ( Port Standar Nya 55 )"
+		echo ""
+		read -p "Silahkan pilih service, Dan tekan tombol ENTER: " option
+    case $option in
+        1)
+		  clear
+            read -p "Silahkan Isi Port Dropbear Yang Baru: " PORT
+			read -p "Apakah Anda ingin Merubah SSH Dropbear ke Port $PORT [y/n]:" -e -i y portdropbear
+            if [ $portdropbear = 'y' ]; then
+            sed -i "s/DROPBEAR_PORT=[0-9]*/DROPBEAR_PORT=$PORT/" /etc/default/dropbear
+            service dropbear restart
+            echo "Dropbear Updated : Port $PORT"
+			else
+            if [ $portdropbear = 'n' ]; then
+            echo "Batal Merubah Port Dropbear"
+            fi
+            fi
+		  exit
+           ;;
+        2)
+          clear
+            read -p "Silahkan Isi Port Squid Yang Baru: " PORT
+			read -p "Apakah Anda ingin Merubah Squid ke Port $PORT [y/n]:" -e -i y portsquid
+            if [ $portsquid = 'y' ]; then
+            sed -i "s/http_port [0-9]*/http_port $PORT/" /etc/squid3/squid.conf
+            service squid3 restart
+            echo "echo "Squid3 Updated : Port $PORT""
+			else
+            if [ $portsquid = 'n' ]; then
+            echo "Batal Merubah Port Squid"
+            fi
+            fi			
+		  exit
+            ;;
+        3)
+          clear
+            read -p "Silahkan Isi Port OpenVPN Yang Baru: " PORT
+			read -p "Apakah Anda ingin Merubah OpenVPN ke Port $PORT [y/n]:" -e -i y portvpn
+            if [ $portvpn = 'y' ]; then
+            sed -i "s/port [0-9]*/port $PORT/" /etc/openvpn/1194.conf
+            service openvpn restart
+            echo "OpenVPN Updated : Port $PORT"
+			else
+            if [ $portvpn = 'n' ]; then
+            echo "Batal Merubah Port OpenVPN"
+            fi
+            fi			
+		  exit
+            ;;
+	   esac
+   
