@@ -1,0 +1,60 @@
+#!/bin/bash
+
+echo -e "---------------------\e[032;1mGANTI PASSWORD  AKUN SSH\e[0m---------------------"
+echo -e "                       \e[032;1mALL SUPPORTED ALIYA HAURA\e[0m"
+echo -e "                 \e[032;1mhttps://www.facebook.com/aliyahaura02\e[0m"
+echo -e "        \e[032;1mCONTACT SUPPORT Telegram @aliyahaura02 SMS/WA 089697708638\e[0m"
+echo ""
+
+# begin of user-list
+echo "-----------------------------------"
+echo "USERNAME              EXP DATE     "
+echo "-----------------------------------"
+
+while read expired
+do
+	AKUN="$(echo $expired | cut -d: -f1)"
+	ID="$(echo $expired | grep -v nobody | cut -d: -f3)"
+	exp="$(chage -l $AKUN | grep "Account expires" | awk -F": " '{print $2}')"
+	if [[ $ID -ge 1000 ]]; then
+		printf "%-21s %2s\n" "$AKUN" "$exp"
+	fi
+done < /etc/passwd
+echo "-----------------------------------"
+echo ""
+# end of user-list
+
+read -p "Masukkan Username Yang Diganti Passwordnya: " username
+egrep "^$username" /etc/passwd >/dev/null
+if [ $? -eq 0 ]; then
+read -p "Masukkan Password baru untuk user $username: " password
+
+clear
+echo "Connecting to seller-vps.net..."
+sleep 0.5
+echo "Merubah Password..."
+sleep 0.5
+  egrep "^$username" /etc/passwd >/dev/null
+  echo -e "$password\n$password" | passwd $username
+  clear
+  echo "Script by seller-vps.net"
+  echo "Terimakasih sudah berlangganan di seller-vps.net"
+  echo " "
+  echo "---------------------------------------"
+  echo -e "Password untuk user ${blue}$username${NC} Sudah berhasil di ganti."
+  echo -e "Password baru untuk user ${blue}$username${NC} adalah ${red}$password${NC}"
+  echo "--------------------------------------"
+  echo " "
+
+else
+echo -e "Username ${red}$username${NC} tidak ditemukan di VPS anda"
+exit 0
+fi
+    
+  echo "-----------------------------------"
+  echo "Username: $username"
+  echo "Password: $password"
+  echo "Valid s/d: $(date -d "$AKTIF days" +"%d-%m-%Y")"
+  echo "-----------------------------------"
+	
+		
