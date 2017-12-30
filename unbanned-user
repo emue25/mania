@@ -1,0 +1,34 @@
+#!/bin/bash
+
+echo -e "------------------------ \e[032;1mUNBANNED USER SSH\e[0m ------------------------"
+echo -e "                       \e[032;1mALL SUPPORTED ALIYA HAURA\e[0m"
+echo -e "                 \e[032;1mhttps://www.facebook.com/aliyahaura02\e[0m"
+echo -e "        \e[032;1mCONTACT SUPPORT Telegram @aliyahaura02 SMS/WA 089697708638\e[0m"
+echo ""
+echo "-------------------------------"
+echo "USERNAME          EXP DATE     "
+echo "-------------------------------"
+while read expired
+do
+        AKUN="$(echo $expired | cut -d: -f1)"
+        ID="$(echo $expired | grep -v nobody | cut -d: -f3)"
+        exp="$(chage -l $AKUN | grep "Account expires" | awk -F": " '{print $2}')"
+        if [[ $ID -ge 1000 ]]; then
+        printf "%-17s %2s\n" "$AKUN" "$exp"
+        fi
+done < /etc/passwd
+echo "-------------------------------"
+echo -e "\e[032;1mScript Modified by aliyahaura02\e[0m"
+echo "-------------------------------"
+read -p "Isikan username: " uname
+read -p "Anda akan membuka Banned User $uname [y/n]:" -e -i y banneduser
+if [ $banneduser = 'y' ]; then
+passwd -u $uname
+echo "Berhasil membuka Banned User $uname"
+else
+if [ $banneduser = 'n' ]; then
+echo "Batal Membuka Banned User $uname"
+fi
+fi
+exit 1
+cd ~/
