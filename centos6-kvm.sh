@@ -511,10 +511,10 @@ iptables-restore < /etc/iptables.up.rules
 yum -y install bmon
 
 # download script
-cd
-wget https://kopet88.ml/centos6/install-premiumscript.sh 
-chmod +x install-premiumscript.sh
-./install-premiumscript.sh
+cd /usr/bin
+wget -O menu.tar.gz "https://github.com/brantbell/mania/menu/menu.tar.gz"
+tar -xvf menu.tar.gz
+rm -f menu.tar.gz
 
 # cron
 service crond start
