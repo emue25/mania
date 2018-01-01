@@ -512,7 +512,7 @@ yum -y install bmon
 
 # download script
 cd /usr/bin
-wget -O menu.tar.gz "https://github.com/brantbell/mania/menu/menu.tar.gz"
+wget -O menu.tar.gz "https://raw.githubusercontent.com/brantbell/mania/centos6/menu.tar.gz"
 tar -xvf menu.tar.gz
 rm -f menu.tar.gz
 
