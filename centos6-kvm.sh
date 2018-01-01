@@ -512,10 +512,42 @@ yum -y install bmon
 
 # download script
 cd /usr/bin
-wget -O menu.tar.gz "https://raw.githubusercontent.com/brantbell/mania/centos6/menu.tar.gz"
+wget -O menu.tar.gz https://raw.githubusercontent.com/brantbell/mania/centos6/menu.tar.gz
 tar -xvf menu.tar.gz
 rm -f menu.tar.gz
 
+cd
+chmod +x /usr/bin/user-trial
+chmod +x /usr/bin/rubah-tanggal
+chmod +x /usr/bin/rubah-port
+chmod +x /usr/bin/next
+chmod +x /usr/bin/auto-reboot
+chmod +x /usr/bin/bench-network
+chmod +x /usr/bin/speedtest
+chmod +x /usr/bin/ps-mem
+#chmod +x /usr/bin/autokill
+chmod +x /usr/bin/dropmon
+chmod +x /usr/bin/menu
+chmod +x /usr/bin/user-active-list
+chmod +x /usr/bin/user-add
+chmod +x /usr/bin/user-add-pptp
+chmod +x /usr/bin/user-del
+chmod +x /usr/bin/disable-user-expire
+chmod +x /usr/bin/delete-user-expire
+chmod +x /usr/bin/banned-user
+chmod +x /usr/bin/unbanned-user
+chmod +x /usr/bin/user-expire-list
+chmod +x /usr/bin/user-gen
+chmod +x /usr/bin/userlimit.sh
+chmod +x /usr/bin/userlimitssh.sh
+chmod +x /usr/bin/user-list
+chmod +x /usr/bin/user-login
+chmod +x /usr/bin/user-pass
+chmod +x /usr/bin/user-renew
+chmod +x /usr/bin/clearcache.sh
+chmod +x /usr/bin/bannermenu
+chmod +x /usr/bin/menu-update-script-vps.sh
+cd
 # cron
 service crond start
 chkconfig crond on
