@@ -22,10 +22,10 @@ echo
 	clear
 	echo "--------------- Selamat datang di Server - IP:$MYIP ---------------"
 	echo ""
-	echo -e "             \e[031;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m"
-    echo -e "                    \e[032;1mALL SUPPORTED ALIYA HAURA\e[0m"
-    echo -e "              \e[032;1mhttps://www.facebook.com/aliyahaura02\e[0m"
-    echo -e "     \e[032;1mCONTACT SUPPORT Telegram @aliyahaura02 SMS/WA 089697708638\e[0m"
+	echo -e "\e[031;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m"
+    echo -e "    \e[032;1mALL SUPPORTED DENBAGUSS\e[0m"
+    echo -e "    \e[032;1mhttps://www.facebook.com/kopet88\e[0m"
+    echo -e "    \e[032;1mCONTACT SUPPORT Telegram @DENBAGUSS SMS/WA 60146309176\e[0m"
 	cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
 	cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
 	freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
@@ -50,7 +50,7 @@ date +"                        %H:%M:%S %Z"
 	echo -e "\e[01;1m 3\e[0m) \e[031;1mMembuat Banyak Akun SSH/OpenVPN\e[0m  (\e[96;1muser-gen\e[0m)" 
 	echo -e "\e[01;1m 4\e[0m) \e[031;1mMengganti Password Akun SSH/OpenVPN\e[0m (\e[96;1muser-pass\e[0m)" 
 	echo -e "\e[01;1m 5\e[0m) \e[031;1mMenambah Masa Aktif Akun SSH/OpenVPN\e[0m  (\e[96;1muser-renew\e[0m)" 
-    echo -e "\e[01;1m 6\e[0m) \e[031;1mMerubah Tanggal Expire Akun SSH/OpenVPN\e[0m (\e[96;1mrubah-tanggal\e[0m)" 	
+        echo -e "\e[01;1m 6\e[0m) \e[031;1mMerubah Tanggal Expire Akun SSH/OpenVPN\e[0m (\e[96;1mrubah-tanggal\e[0m)" 	
 	echo -e "\e[01;1m 7\e[0m) \e[031;1mMenghapus Akun SSH/OpenVPN\e[0m  (\e[96;1muser-del\e[0m)" 
 	echo -e "\e[01;1m 8\e[0m) \e[031;1mMembuat Akun PPTP VPN\e[0m  (\e[96;1muser-add-pptp\e[0m)" 
 	echo -e "\e[01;1m 9\e[0m) \e[031;1mMonitoring Dropbear\e[0m  (\e[96;1mdropmon [PORT]\e[0m)" 
