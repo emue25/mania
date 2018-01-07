@@ -519,7 +519,6 @@ wget -O /usr/bin/dropmon "https://raw.githubusercontent.com/brantbell/mania/cent
 wget -O /usr/bin/menu "https://raw.githubusercontent.com/brantbell/mania/centos6/menu.sh"
 wget -O /usr/bin/user-active-list "https://raw.githubusercontent.com/brantbell/mania/centos6/user-active-list.sh"
 wget -O /usr/bin/user-add "https://raw.githubusercontent.com/brantbell/mania/centos6/user-add.sh"
-wget -O /usr/bin/user-add-pptp "https://raw.githubusercontent.com/brantbell/mania/centos6/user-add-pptp.sh"
 wget -O /usr/bin/user-del https://raw.githubusercontent.com/brantbell/mania/centos6/user-del.sh"
 wget -O /usr/bin/disable-user-expire "https://raw.githubusercontent.com/brantbell/mania/centos6/disable-user-expire.sh"
 wget -O /usr/bin/delete-user-expire "https://raw.githubusercontent.com/brantbell/mania/centos6/delete-user-expire.sh"
