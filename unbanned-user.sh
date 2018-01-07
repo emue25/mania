@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo -e "------------------------ \e[032;1mUNBANNED USER SSH\e[0m ------------------------"
-echo -e "                       \e[032;1mALL SUPPORTED ALIYA HAURA\e[0m"
-echo -e "                 \e[032;1mhttps://www.facebook.com/aliyahaura02\e[0m"
-echo -e "        \e[032;1mCONTACT SUPPORT Telegram @aliyahaura02 SMS/WA 089697708638\e[0m"
+echo -e "                       \e[032;1mALL SUPPORTED ZHANGZI-SSL\e[0m"
+echo -e "                 \e[032;1mhttps://www.facebook.com/kopet88\e[0m"
+echo -e "        \e[032;1mCONTACT SUPPORT Telegram @DENBAGUSS SMS/WA 60146309176\e[0m"
 echo ""
 echo "-------------------------------"
 echo "USERNAME          EXP DATE     "
@@ -18,7 +18,7 @@ do
         fi
 done < /etc/passwd
 echo "-------------------------------"
-echo -e "\e[032;1mScript Modified by aliyahaura02\e[0m"
+echo -e "\e[032;1mScript Modified by ZHANGZI-SSL\e[0m"
 echo "-------------------------------"
 read -p "Isikan username: " uname
 read -p "Anda akan membuka Banned User $uname [y/n]:" -e -i y banneduser
