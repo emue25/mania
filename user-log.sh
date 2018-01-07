@@ -27,7 +27,7 @@ echo -e "Gunakan perintah ${red}user-log dropbear${NC} untuk memeriksa log user 
 echo -e "Gunakan perintah ${red}user-log openssh${NC} untuk memeriksa log user openssh"
 echo " "
 echo "================================================="
-echo "Terimakasih sudah berlangganan di seller-vps.net"
+echo "Terimakasih sudah berlangganan di seller-kimcil.net"
 echo "Script Created By seller-vps.net"
 exit 1
 ;;
@@ -40,6 +40,6 @@ set -- $line
 cat /tmp/sukses.txt | grep $1 >> /tmp/hasil.txt
 done
 echo "=================================================" >> /tmp/hasil.txt
-echo "Terimakasih sudah berlangganan di seller-vps.net" >> /tmp/hasil.txt
-echo "Script Created By seller-vps.net " >> /tmp/hasil.txt
+echo "Terimakasih sudah berlangganan di seller-kimcil.net" >> /tmp/hasil.txt
+echo "Script Created By seller-kimcil.net " >> /tmp/hasil.txt
 cat /tmp/hasil.txt
