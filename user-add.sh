@@ -18,7 +18,7 @@ fi
 echo "------------------------ MEMBUAT AKUN SSH ------------------------"
 
 
-	echo "           DEVELOPED BY ALIYA HAURA atau (089697708638)           " 
+	echo "           DEVELOPED BY ZHANGZI-SSL atau (60146309176)           " 
 echo ""
 
 read -p "Isikan username: " username
@@ -46,6 +46,7 @@ echo -e "     Host: $MYIP"
 echo -e "     Username: $username" 
 echo -e "     Password: $password                   " 
 echo -e "     Port default dropbear: 443,22,80        " 
+echo -e "     Port defaul SSL/TSL : 444 "
 echo -e "     Port default openSSH : 110,143         " 
 echo -e "     Port default squid   : 8000,8080,3128      "
 echo -e "                                           "
@@ -57,9 +58,9 @@ echo -e "   DI LARANG:                              "
 echo -e "   HACKING-DDOS-PHISING-SPAM-TORENT        " 
 echo -e "   CARDING-CRIMINAL CYBER.                 "
 echo -e "===========================================" 
-echo -e "   Script by ARIF-SSH             "
+echo -e "   Script by ZHANGZI-SSL             "
 echo -e "   Config OVPN:                            "
-echo -e "   http://$MYIP:81/client.ovpn        " 
+echo -e "   http://$MYIP:85/client.ovpn        " 
 echo -e "-------------------------------------------" 
 echo -e ""
 echo -e ""
