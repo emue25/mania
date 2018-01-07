@@ -79,7 +79,7 @@ echo " Tetap Multi Login Ganti Passnya baru Kill Lagi "
 echo " Caranya pake Kill nomor PID " 
 echo "----------------------------------------------------------------"
 
-	echo " DEVELOPED BY ALIYA HAURA  "
+	echo " DEVELOPED BY ZHANGZI-SSL  "
 echo "----------------------------------------------------------------"
 echo ""
 
