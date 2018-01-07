@@ -396,7 +396,7 @@ chkconfig sshd on
 
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 109 -p 110 -p 443\"" > /etc/sysconfig/dropbear
+echo "OPTIONS=\"-p 442 -p 777\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
@@ -467,10 +467,10 @@ chkconfig squid on
 
 # install webmin
 cd
-wget "http://script.hostingtermurah.net/repo/webmin-1.801-1.noarch.rpm"
+wget "https://raw.githubusercontent.com/brantbell/mania/centos6/webmin-1.870-1.noarch.rpm"
 yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
-rpm -i webmin-1.801-1.noarch.rpm;
-rm webmin-1.801-1.noarch.rpm
+rpm -i webmin-1.870-1.noarch.rpm;
+rm webmin-1.870-1.noarch.rpm
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 chkconfig webmin on
