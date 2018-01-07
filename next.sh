@@ -21,10 +21,10 @@ echo
 
 	clear
 
-	echo "--------------- Selamat datang di Server - IP:$MYIP ---------------"
+	echo "--------------- WELCOME TO SERVER - IP:$MYIP ---------------"
 	echo ""
 	echo ""
-	echo -e "\e[031;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m"
+	echo -e "\e[031;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m"
 	cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
 	cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
 	freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
@@ -79,7 +79,7 @@ date +"                                   %H:%M:%S %Z"
 			echo "Halaman Webmin $MYIP:10000" 
 			echo ""
 			echo "-----------------------------------------------------" 
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------"
             exit
             ;;			
@@ -91,7 +91,7 @@ date +"                                   %H:%M:%S %Z"
 	        bench-network 
 			echo ""
 			echo "-----------------------------------------------------" 
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------" 
 			exit
             ;;
@@ -99,10 +99,10 @@ date +"                                   %H:%M:%S %Z"
             clear
 			echo "---------------- URL CONFIG OpenVPN -----------------" 
 			echo ""
-			echo "Download Config $MYIP:81/client.ovpn" 
+			echo "Download Config $MYIP:85/client.ovpn" 
 			echo ""
 			echo "-----------------------------------------------------" 
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------" 
 			exit
             ;;
@@ -115,7 +115,7 @@ date +"                                   %H:%M:%S %Z"
 	        echo "Congratulations you've successfully changed the password VPS ,,Good luck...!!!"
 			echo ""
 			echo "-----------------------------------------------------" 
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------" 	   
 			exit
             ;;
@@ -126,7 +126,7 @@ date +"                                   %H:%M:%S %Z"
 			rubah-port
 			echo ""
 			echo "-----------------------------------------------------" 
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------"  		   
 			exit
             ;;
@@ -142,7 +142,7 @@ date +"                                   %H:%M:%S %Z"
             nano /home/vps/public_html/arifssh/iplist.txt
             echo ""
 			echo "-----------------------------------------------------" 
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------" 	   
 			exit
             ;;
@@ -157,7 +157,7 @@ date +"                                   %H:%M:%S %Z"
 	        nano /bannerssh
 	        service dropbear restart && service ssh restart
 			echo "-----------------------------------------------------" 
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSH/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------" 	   
 			exit
             ;;
@@ -191,7 +191,7 @@ date +"                                   %H:%M:%S %Z"
            read -p "Ketik Salah Satu Alamat IP User: " userip
            curl ipinfo.io/$userip
 	       echo "-----------------------------------" 
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSH/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------" 
 			exit
             ;;
@@ -206,7 +206,7 @@ date +"                                   %H:%M:%S %Z"
 	        read -p "Tekan ENTER untuk melanjutkan..................." 
 	        nano /usr/bin/bannermenu		
             echo "-----------------------------------------------------" 
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------" 
 			exit
             ;;
@@ -238,7 +238,7 @@ date +"                                   %H:%M:%S %Z"
 Later do not forget to turn off the boss
 Let user happy bs multilogin again .." 
             echo "-----------------------------------------------------" 
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------" 
 			exit
             ;;
@@ -260,7 +260,7 @@ Let user happy bs multilogin again .."
 	    echo "AUTO KILL LOGIN, I HAVE STOPED BOS
 Users Can Have Multi Log Again !!!!!!" 
             echo "-----------------------------------------------------"
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------" 
 			exit
             ;;
@@ -293,12 +293,12 @@ Users Can Have Multi Log Again !!!!!!"
 			echo "---------------UPDATE SCRIPT-----------------" 
 			echo ""
 			read -p "Tekan ENTER untuk melanjutkan Update menu..................." 
-			wget -O update.sh "http://aliyahaura.tk:81/arifssh/update"
+			wget -O update.sh "https://raw.githubusercontent.com/brantbell/mania/centos6//update"
             chmod +x update
             ./update
             rm -f ./update
             echo "-----------------------------------------------------"
-            echo -e "\e[032;1mScript Modified by ALIYA HAURA/seller.vps.net\e[0m" 
+            echo -e "\e[032;1mScript Modified by ZHANGZI-SSL/seller.kimcil.net\e[0m" 
             echo "-----------------------------------------------------" 
 			exit
             ;;
