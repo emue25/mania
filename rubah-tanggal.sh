@@ -2,9 +2,9 @@
 
 
 echo -e "------------------------ \e[032;1mRUBAH TANGGAL EXPIRED\e[0m ------------------------"
-echo -e "                       \e[032;1mALL SUPPORTED ALIYA HAURA\e[0m"
-echo -e "                 \e[032;1mhttps://www.facebook.com/aliyahaura02\e[0m"
-echo -e "        \e[032;1mCONTACT SUPPORT Telegram @aliyahaura02 SMS/WA 089697708638\e[0m"
+echo -e "                       \e[032;1mALL SUPPORTED ZHANGZI-SSL\e[0m"
+echo -e "                 \e[032;1mhttps://www.facebook.com/kopet88\e[0m"
+echo -e "        \e[032;1mCONTACT SUPPORT Telegram @DENBAGUSS SMS/WA 60146309176\e[0m"
 echo "-------------------------------"
 echo "USERNAME          EXP DATE     "
 echo "-------------------------------"
@@ -18,7 +18,7 @@ do
         fi
 done < /etc/passwd
 echo "-------------------------------"
-echo -e "\e[032;1mScript Modified by Aliya haura\e[0m"
+echo -e "\e[032;1mScript Modified by ZHANGZI-SSL\e[0m"
 echo "-------------------------------"
 read -p "Isikan username: " uname
 read -p "Isikan Tanggal Expire (TH-BLN-TGL): " expdate
@@ -34,7 +34,7 @@ Host/IP: $MYIP
 Dropbear Port: 443, 80
 OpenSSH Port:  143
 Squid Proxy: 8000, 8080, 3128
-OpenVPN Config: http://$MYIP:81/client.ovpn
+OpenVPN Config: http://$MYIP:85/client.ovpn
 Username  : $uname
 Valid s/d : $exp
 -----------------------------------
