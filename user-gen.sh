@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo -e "------------------------\e[032;1mGENERATE  AKUN SSH\e[0m------------------------"
-echo -e "                    \e[032;1mALL SUPPORTED ALIYA HAURA\e[0m"
-echo -e "              \e[032;1mhttps://www.facebook.com/aliyahaura02\e[0m"
-echo -e "     \e[032;1mCONTACT SUPPORT Telegram @aliya hauraSMS/WA 089697708638\e[0m"
+echo -e "                    \e[032;1mALL ZHANGZI-SSL\e[0m"
+echo -e "              \e[032;1mhttps://www.facebook.com/kopet88\e[0m"
+echo -e "     \e[032;1mCONTACT SUPPORT Telegram @DENBAGUSS SMS/WA 60146309176\e[0m"
 
 echo ""
 
@@ -20,8 +20,9 @@ echo "-----------------------------------"
 echo "Host/IP: $MYIP"
 echo "Dropbear Port: 443, 22, 80"
 echo "OpenSSH Port: 110, 143"
+echo "SSL/TSL Port: 444 "
 echo "Squid Proxy: 8000, 8080, 3128"
-echo "OpenVPN Config: http://$MYIP:81/client.ovpn"
+echo "OpenVPN Config: http://$MYIP:85/client.ovpn"
 
 for (( i=1; i <= $JUMLAH; i++ ))
 do
