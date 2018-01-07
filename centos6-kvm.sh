@@ -539,6 +539,7 @@ wget -O /usr/bin/vpnmon "https://raw.githubusercontent.com/brantbell/mania/cento
 wget -O /usr/bin/vpnmon "https://raw.githubusercontent.com/brantbell/mania/centos6/next.sh"
 
 cd
+chmod +x /usr/bin/benchmark
 chmod +x /usr/bin/user-trial
 chmod +x /usr/bin/rubah-tanggal
 chmod +x /usr/bin/rubah-port
