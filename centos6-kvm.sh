@@ -512,31 +512,32 @@ yum -y install bmon
 
 # download script
 cd /usr/bin
-wget -O /usr/bin/benchmark "https:///benchmark.sh
-wget -O /usr/bin/speedtest $source/debian7/speedtest_cli.py
-wget -O /usr/bin/ps-mem $source/debian7/ps_mem.py
-wget -O /usr/bin/dropmon $source/debian7/dropmon.sh
-wget -O /usr/bin/menu $source/debian7/menu.sh
-wget -O /usr/bin/user-active-list $source/debian7/user-active-list.sh
-wget -O /usr/bin/user-add $source/debian7/user-add.sh
-wget -O /usr/bin/user-add-pptp $source/debian7/user-add-pptp.sh
-wget -O /usr/bin/user-del $source/debian7/user-del.sh
-wget -O /usr/bin/disable-user-expire $source/debian7/disable-user-expire.sh
-wget -O /usr/bin/delete-user-expire $source/debian7/delete-user-expire.sh
-wget -O /usr/bin/banned-user $source/debian7/banned-user.sh
-wget -O /usr/bin/unbanned-user $source/debian7/unbanned-user.sh
-wget -O /usr/bin/user-expire-list $source/debian7/user-expire-list.sh
-wget -O /usr/bin/user-gen $source/debian7/user-gen.sh
-wget -O /usr/bin/userlimit.sh $source/debian7/userlimit.sh
-#wget -O /usr/bin/userlimitssh.sh $source/debian7/userlimitssh.sh
-wget -O /usr/bin/user-list $source/debian7/user-list.sh
-wget -O /usr/bin/user-login $source/debian7/user-login.sh
-wget -O /usr/bin/user-pass $source/debian7/user-pass.sh
-wget -O /usr/bin/user-renew $source/debian7/user-renew.sh
-wget -O /usr/bin/clearcache.sh $source/debian7/clearcache.sh
-wget -O /usr/bin/bannermenu $source/debian7/bannermenu
-wget -O /usr/bin/menu-update-script-vps.sh $source/debian7/menu-update-script-vps.sh
-wget -O /usr/bin/vpnmon $source/debian7/vpnmon
+wget -O /usr/bin/benchmark "https://raw.githubusercontent.com/brantbell/mania/centos6/benchmark.sh"
+wget -O /usr/bin/speedtest "https://raw.githubusercontent.com/brantbell/mania/centos6/speedtest_cli.py"
+wget -O /usr/bin/ps-mem "https://raw.githubusercontent.com/brantbell/mania/centos6/ps_mem.py"
+wget -O /usr/bin/dropmon "https://raw.githubusercontent.com/brantbell/mania/centos6/dropmon.sh"
+wget -O /usr/bin/menu "https://raw.githubusercontent.com/brantbell/mania/centos6/menu.sh"
+wget -O /usr/bin/user-active-list "https://raw.githubusercontent.com/brantbell/mania/centos6/user-active-list.sh"
+wget -O /usr/bin/user-add "https://raw.githubusercontent.com/brantbell/mania/centos6/user-add.sh"
+wget -O /usr/bin/user-add-pptp "https://raw.githubusercontent.com/brantbell/mania/centos6/user-add-pptp.sh"
+wget -O /usr/bin/user-del https://raw.githubusercontent.com/brantbell/mania/centos6/user-del.sh"
+wget -O /usr/bin/disable-user-expire "https://raw.githubusercontent.com/brantbell/mania/centos6/disable-user-expire.sh"
+wget -O /usr/bin/delete-user-expire "https://raw.githubusercontent.com/brantbell/mania/centos6/delete-user-expire.sh"
+wget -O /usr/bin/banned-user "https://raw.githubusercontent.com/brantbell/mania/centos6/banned-user.sh"
+wget -O /usr/bin/unbanned-user "https://raw.githubusercontent.com/brantbell/mania/centos6/unbanned-user.sh"
+wget -O /usr/bin/user-expire-list "https://raw.githubusercontent.com/brantbell/mania/centos6/user-expire-list.sh"
+wget -O /usr/bin/user-gen "https://raw.githubusercontent.com/brantbell/mania/centos6/user-gen.sh"
+wget -O /usr/bin/userlimit.sh "https://raw.githubusercontent.com/brantbell/mania/centos6/userlimit.sh"
+#wget -O /usr/bin/userlimitssh.sh "https://raw.githubusercontent.com/brantbell/mania/centos6/userlimitssh.sh"
+wget -O /usr/bin/user-list "https://raw.githubusercontent.com/brantbell/mania/centos6/user-list.sh"
+wget -O /usr/bin/user-login "https://raw.githubusercontent.com/brantbell/mania/centos6/user-login.sh"
+wget -O /usr/bin/user-pass "https://raw.githubusercontent.com/brantbell/mania/centos6/user-pass.sh"
+wget -O /usr/bin/user-renew "https://raw.githubusercontent.com/brantbell/mania/centos6/user-renew.sh"
+wget -O /usr/bin/clearcache.sh "https://raw.githubusercontent.com/brantbell/mania/centos6/clearcache.sh"
+wget -O /usr/bin/bannermenu "https://raw.githubusercontent.com/brantbell/mania/centos6/bannermenu"
+wget -O /usr/bin/menu-update-script-vps.sh "https://raw.githubusercontent.com/brantbell/mania/centos6/menu-update-script-vps.sh"
+wget -O /usr/bin/vpnmon "https://raw.githubusercontent.com/brantbell/mania/centos6/vpnmon"
+wget -O /usr/bin/vpnmon "https://raw.githubusercontent.com/brantbell/mania/centos6/next.sh"
 
 cd
 chmod +x /usr/bin/user-trial
