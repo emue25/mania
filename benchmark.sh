@@ -3,4 +3,4 @@
 # go to root
 cd
 
-wget $source/debian7/bench.sh -O - -o /dev/null|bash
+wget https://raw.githubusercontent.com/brantbell/mania/centos6/bench.sh -O - -o /dev/null|bash
