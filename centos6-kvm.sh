@@ -512,9 +512,31 @@ yum -y install bmon
 
 # download script
 cd /usr/bin
-wget -O menu.tar.gz https://raw.githubusercontent.com/brantbell/mania/centos6/menu.tar.gz
-tar -xvf menu.tar.gz
-rm -f menu.tar.gz
+wget -O /usr/bin/benchmark "https:///benchmark.sh
+wget -O /usr/bin/speedtest $source/debian7/speedtest_cli.py
+wget -O /usr/bin/ps-mem $source/debian7/ps_mem.py
+wget -O /usr/bin/dropmon $source/debian7/dropmon.sh
+wget -O /usr/bin/menu $source/debian7/menu.sh
+wget -O /usr/bin/user-active-list $source/debian7/user-active-list.sh
+wget -O /usr/bin/user-add $source/debian7/user-add.sh
+wget -O /usr/bin/user-add-pptp $source/debian7/user-add-pptp.sh
+wget -O /usr/bin/user-del $source/debian7/user-del.sh
+wget -O /usr/bin/disable-user-expire $source/debian7/disable-user-expire.sh
+wget -O /usr/bin/delete-user-expire $source/debian7/delete-user-expire.sh
+wget -O /usr/bin/banned-user $source/debian7/banned-user.sh
+wget -O /usr/bin/unbanned-user $source/debian7/unbanned-user.sh
+wget -O /usr/bin/user-expire-list $source/debian7/user-expire-list.sh
+wget -O /usr/bin/user-gen $source/debian7/user-gen.sh
+wget -O /usr/bin/userlimit.sh $source/debian7/userlimit.sh
+#wget -O /usr/bin/userlimitssh.sh $source/debian7/userlimitssh.sh
+wget -O /usr/bin/user-list $source/debian7/user-list.sh
+wget -O /usr/bin/user-login $source/debian7/user-login.sh
+wget -O /usr/bin/user-pass $source/debian7/user-pass.sh
+wget -O /usr/bin/user-renew $source/debian7/user-renew.sh
+wget -O /usr/bin/clearcache.sh $source/debian7/clearcache.sh
+wget -O /usr/bin/bannermenu $source/debian7/bannermenu
+wget -O /usr/bin/menu-update-script-vps.sh $source/debian7/menu-update-script-vps.sh
+wget -O /usr/bin/vpnmon $source/debian7/vpnmon
 
 cd
 chmod +x /usr/bin/user-trial
