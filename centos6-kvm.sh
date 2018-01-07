@@ -579,7 +579,7 @@ mkswap /swapfile
 # jalan swapfile
 swapon /swapfile
 #auto star saat reboot
-wget https://raw.githubusercontent.com/brantbell/mania/centos6/fstab
+wget "https://raw.githubusercontent.com/brantbell/mania/centos6/fstab"
 mv ./fstab /etc/fstab
 chmod 644 /etc/fstab
 sysctl vm.swappiness=10
@@ -592,7 +592,7 @@ cd
 apt-get update
 apt-get upgrade
 apt-get install stunnel4
-wget -O /etc/stunnel/stunnel.conf https://raw.githubusercontent.com/brantbell/mania/centos6/stunnel.conf
+wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/brantbell/mania/centos6/stunnel.conf"
 openssl genrsa -out key.pem 2048
 openssl req -new -x509 -key key.pem -out cert.pem -days 1095
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
