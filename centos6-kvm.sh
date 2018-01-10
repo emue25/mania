@@ -467,7 +467,7 @@ chkconfig squid on
 
 # install webmin
 cd
-wget "https://raw.githubusercontent.com/brantbell/mania/centos6/webmin-1.870-1.noarch.rpm"
+wget "http://script.hostingtermurah.net/repo/webmin-1.801-1.noarch.rpm"
 yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
 rpm -i webmin-1.870-1.noarch.rpm;
 rm webmin-1.870-1.noarch.rpm
