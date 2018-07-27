@@ -552,7 +552,8 @@ cd
 #install stunnel ssl
 yum -y install update
 yum -y install upgrade
-yum -y install install stunnel4
+yum -y install nano
+yum -y install stunnel4
 wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/brantbell/mania/centos6/stunnel.conf"
 openssl genrsa -out key.pem 2048
 openssl req -new -x509 -key key.pem -out cert.pem -days 1095
