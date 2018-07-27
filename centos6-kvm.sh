@@ -459,7 +459,7 @@ refresh_pattern ^ftp: 1440 20% 10080
 refresh_pattern ^gopher: 1440 0% 1440
 refresh_pattern -i (/cgi-bin/|\?) 0 0% 0
 refresh_pattern . 0 20% 4320
-visible_hostname Proxy.HostingTermurah.net
+visible_hostname sshfast.us
 END
 sed -i $MYIP2 /etc/squid/squid.conf;
 service squid restart
@@ -553,13 +553,13 @@ cd
 yum -y install update
 yum -y install upgrade
 yum -y install nano
-yum -y install stunnel4
+yum -y install stunnel
 wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/brantbell/mania/centos6/stunnel.conf"
 openssl genrsa -out key.pem 2048
 openssl req -new -x509 -key key.pem -out cert.pem -days 1095
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
-sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
-/etc/init.d/stunnel4 restart
+/etc/init.d/stunnel start
+/etc/init.d/stunne restart
 
 # cron
 service crond start
