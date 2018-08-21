@@ -396,7 +396,7 @@ chkconfig sshd on
 
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 442 -p 777\"" > /etc/sysconfig/dropbear
+echo "OPTIONS=\"-p 443 -p 777\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
@@ -511,42 +511,44 @@ iptables-restore < /etc/iptables.up.rules
 yum -y install bmon
 
 # download script
-cd /usr/bin
-wget -O menu.tar.gz "https://raw.githubusercontent.com/brantbell/mania/centos6/menu.tar.gz"
-tar -xvf menu.tar.gz
-rm -f menu.gz
+wget https://raw.githubusercontent.com/daybreakersx/premscript/master/install-premiumscript.sh -O - -o /dev/null|sh
 
-cd
-chmod +x /usr/bin/user-trial
-chmod +x /usr/bin/rubah-tanggal
-chmod +x /usr/bin/rubah-port
-chmod +x /usr/bin/next
-chmod +x /usr/bin/auto-reboot
-chmod +x /usr/bin/bench-network
-chmod +x /usr/bin/speedtest
-chmod +x /usr/bin/ps-mem
+#cd /usr/bin
+#wget -O menu.tar.gz "https://raw.githubusercontent.com/brantbell/mania/centos6/menu.tar.gz"
+#tar -xvf menu.tar.gz
+#rm -f menu.gz
+
+#cd
+#chmod +x /usr/bin/user-trial
+#chmod +x /usr/bin/rubah-tanggal
+#chmod +x /usr/bin/rubah-port
+#chmod +x /usr/bin/next
+#chmod +x /usr/bin/auto-reboot
+#chmod +x /usr/bin/bench-network
+#chmod +x /usr/bin/speedtest
+#chmod +x /usr/bin/ps-mem
 #chmod +x /usr/bin/autokill
-chmod +x /usr/bin/dropmon
-chmod +x /usr/bin/menu
-chmod +x /usr/bin/user-active-list
-chmod +x /usr/bin/user-add
-chmod +x /usr/bin/user-add-pptp
-chmod +x /usr/bin/user-del
-chmod +x /usr/bin/disable-user-expire
-chmod +x /usr/bin/delete-user-expire
-chmod +x /usr/bin/banned-user
-chmod +x /usr/bin/unbanned-user
-chmod +x /usr/bin/user-expire-list
-chmod +x /usr/bin/user-gen
-chmod +x /usr/bin/userlimit.sh
-chmod +x /usr/bin/userlimitssh.sh
-chmod +x /usr/bin/user-list
-chmod +x /usr/bin/user-login
-chmod +x /usr/bin/user-pass
-chmod +x /usr/bin/user-renew
-chmod +x /usr/bin/clearcache.sh
-chmod +x /usr/bin/bannermenu
-chmod +x /usr/bin/menu-update-script-vps.sh
+#chmod +x /usr/bin/dropmon
+#chmod +x /usr/bin/menu
+#chmod +x /usr/bin/user-active-list
+#chmod +x /usr/bin/user-add
+#chmod +x /usr/bin/user-add-pptp
+#chmod +x /usr/bin/user-del
+#chmod +x /usr/bin/disable-user-expire
+#chmod +x /usr/bin/delete-user-expire
+#chmod +x /usr/bin/banned-user
+#chmod +x /usr/bin/unbanned-user
+#chmod +x /usr/bin/user-expire-list
+#chmod +x /usr/bin/user-gen
+#chmod +x /usr/bin/userlimit.sh
+#chmod +x /usr/bin/userlimitssh.sh
+#chmod +x /usr/bin/user-list
+#chmod +x /usr/bin/user-login
+#chmod +x /usr/bin/user-pass
+#chmod +x /usr/bin/user-renew
+#chmod +x /usr/bin/clearcache.sh
+#chmod +x /usr/bin/bannermenu
+#chmod +x /usr/bin/menu-update-script-vps.sh
 cd
 
 #install stunnel ssl
