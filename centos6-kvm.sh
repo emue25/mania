@@ -294,8 +294,7 @@ chkconfig openvpn on
 #Create OpenVPN Config
 mkdir -p /home/vps/public_html
 cat > /home/vps/public_html/client.ovpn <<-END
-# OpenVPN Configuration Dibuat Oleh HostingTermurah.net
-# (Official Partner VPS-Murah.net)
+# OpenVPN Configuration Dibuat Oleh DENBAGUSS
 client
 dev tun
 proto tcp
