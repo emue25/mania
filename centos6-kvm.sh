@@ -395,7 +395,7 @@ chkconfig sshd on
 
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 443 -p 777\"" > /etc/sysconfig/dropbear
+echo "OPTIONS=\"-p 442 -p 777\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
@@ -449,7 +449,7 @@ http_access allow localnet
 http_access allow localhost
 http_access deny all
 http_port 8080
-http_port 8000
+http_port 80
 http_port 3128
 hierarchy_stoplist cgi-bin ?
 coredump_dir /var/spool/squid
