@@ -247,7 +247,7 @@ export EASY_RSA="${EASY_RSA:-.}"
 . /etc/openvpn/easy-rsa/2.0/build-dh
 # Setting Server
 cat > /etc/openvpn/server.conf <<-END
-port 55
+port 443
 proto tcp
 dev tun
 tun-mtu 1500
@@ -317,7 +317,7 @@ script-security 2
 route 0.0.0.0 0.0.0.0
 route-method exe
 route-delay 2
-remote $MYIP 55
+remote $MYIP 443
 cipher AES-128-CBC
 END
 echo '<ca>' >> /home/vps/public_html/client.ovpn
@@ -395,7 +395,7 @@ chkconfig sshd on
 
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 443 -p 777\"" > /etc/sysconfig/dropbear
+echo "OPTIONS=\"-p 442 -p 777\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
