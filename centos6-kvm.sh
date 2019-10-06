@@ -298,6 +298,8 @@ cat > /home/vps/public_html/client.ovpn <<-END
 client
 dev tun
 proto tcp
+remote $MYIP 443
+http-proxy $MYIP 80
 persist-key
 persist-tun
 dev tun
@@ -317,7 +319,6 @@ script-security 2
 route 0.0.0.0 0.0.0.0
 route-method exe
 route-delay 2
-remote $MYIP 443
 cipher AES-128-CBC
 END
 echo '<ca>' >> /home/vps/public_html/client.ovpn
