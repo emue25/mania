@@ -465,10 +465,10 @@ chkconfig squid on
 
 # install webmin
 cd
-wget "http://script.hostingtermurah.net/repo/webmin-1.801-1.noarch.rpm"
+wget "https://github.com/emue25/mania/centos6/webmin-1.930-1.noarch.rpm"
 yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
-rpm -i webmin-1.801-1.noarch.rpm;
-rm webmin-1.801-1.noarch.rpm
+rpm -i webmin-1.930-1.noarch.rpm;
+rm webmin-1.930-1.noarch.rpm
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 chkconfig webmin on
