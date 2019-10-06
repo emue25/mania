@@ -466,9 +466,12 @@ chkconfig squid on
 
 # install webmin
 cd
-wget "https://raw.githubusercontent.com/emue25/mania/centos6/webmin-1.930-1.noarch.rpm"
-yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
-rpm -i webmin-1.930-1.noarch.rpm;
+#wget "http://script.hostingtermurah.net/repo/webmin-1.801-1.noarch.rpm"
+#yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
+wget "http://prdownloads.sourceforge.net/webadmin/webmin-1.930-1.noarch.rpm"
+yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty perl-Encode-Detect
+rpm -U webmin-1.930-1.noarch.rpm
+#rpm -i webmin-1.801-1.noarch.rpm;
 rm webmin-1.930-1.noarch.rpm
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
@@ -512,8 +515,6 @@ yum -y install bmon
 # download script
 wget https://raw.githubusercontent.com/daybreakersx/premscript/master/install-premiumscript.sh -O - -o /dev/null|sh
 
-#vix
-wget -O fix-centos-useradd "https://www.dropbox.com/s/oczjzk7bvt7zi8i/fix-centos-useradd.sh?dl=1" && chmod fix-centos-useradd && bash fix-centos-useradd
 #cd /usr/bin
 #wget -O menu.tar.gz "https://raw.githubusercontent.com/brantbell/mania/centos6/menu.tar.gz"
 #tar -xvf menu.tar.gz
