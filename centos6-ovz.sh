@@ -515,9 +515,7 @@ yum -y install bmon
 
 # download script
 cd
-wget http://zhangzi-ssh.online/centos6/install-premiumscript.sh 
-chmod +x install-premiumscript.sh
-./install-premiumscript.sh
+wget https://raw.githubusercontent.com/daybreakersx/premscript/master/install-premiumscript.sh -O - -o /dev/null|sh
 
 # cron
 service crond start
