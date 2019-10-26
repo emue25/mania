@@ -205,14 +205,10 @@ service php-fpm restart
 service nginx restart
 
 #Install OpenVPN
-install openvpn
-service openvpn restart
-chkconfig openvpn on
-cd
 yum install -y epel-release
 yum install -y openvpn iptables openssl
 geteasyrsa
- easy-rsa
+# easy-rsa
 if [[ ! -d /etc/openvpn/easy-rsa/2.0/ ]]; then
 	wget --no-check-certificate -O ~/easy-rsa.tar.gz https://github.com/OpenVPN/easy-rsa/archive/2.2.2.tar.gz
     tar xzf ~/easy-rsa.tar.gz -C ~/
@@ -247,7 +243,7 @@ export EASY_RSA="${EASY_RSA:-.}"
 # seting KEY CN
 export EASY_RSA="${EASY_RSA:-.}"
 "$EASY_RSA/pkitool" client
- DH params
+# DH params
 . /etc/openvpn/easy-rsa/2.0/build-dh
 # Setting Server
 cat > /etc/openvpn/server.conf <<-END
