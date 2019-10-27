@@ -144,7 +144,7 @@ firewall-cmd --reload
 yum -y install nginx
 rm /etc/nginx/sites-enabled/default
 wget -O /etc/nginx/sites-enabled/default "http://evira.us/default"
-ystemctl restart nginx.service
+systemctl restart nginx.service
 
 # install openvpn
 yum -y install openvpn
