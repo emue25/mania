@@ -72,17 +72,15 @@ chmod +x /usr/bin/screenfetch
 echo "clear" >> .bash_profile
 echo "screenfetch" >> .bash_profile
 
+#webmin
 cd
-#wget "http://script.hostingtermurah.net/repo/webmin-1.801-1.noarch.rpm"
-#yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
-wget "http://prdownloads.sourceforge.net/webadmin/webmin-1.930-1.noarch.rpm"
-yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty perl-Encode-Detect
-rpm -U webmin-1.930-1.noarch.rpm
-#rpm -i webmin-1.801-1.noarch.rpm;
-rm webmin-1.930-1.noarch.rpm
+wget "https://github.com/emue25/VPSauto/raw/master/webmin_1.930_all.deb"
+dpkg --install webmin_1.930_all.deb;
+apt-get -y -f install;
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+rm /root/webmin_1.930_all.deb
 service webmin restart
-chkconfig webmin on
+
 
 # setting port ssh
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
