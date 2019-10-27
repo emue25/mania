@@ -72,6 +72,17 @@ chmod +x /usr/bin/screenfetch
 echo "clear" >> .bash_profile
 echo "screenfetch" >> .bash_profile
 
+cd
+#wget "http://script.hostingtermurah.net/repo/webmin-1.801-1.noarch.rpm"
+#yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
+wget "http://prdownloads.sourceforge.net/webadmin/webmin-1.930-1.noarch.rpm"
+yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty perl-Encode-Detect
+rpm -U webmin-1.930-1.noarch.rpm
+#rpm -i webmin-1.801-1.noarch.rpm;
+rm webmin-1.930-1.noarch.rpm
+sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+service webmin restart
+chkconfig webmin on
 # install dropbear
 yum -y install dropbear
 echo "OPTIONS=\"-p 777 -p 110 -p 442\"" > /etc/sysconfig/dropbear
@@ -126,17 +137,6 @@ yum install screen -y
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 firewall-cmd --zone=public --add-port=7300/tcp --permanent
 firewall-cmd --reload
-cd
-#wget "http://script.hostingtermurah.net/repo/webmin-1.801-1.noarch.rpm"
-#yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
-wget "http://prdownloads.sourceforge.net/webadmin/webmin-1.930-1.noarch.rpm"
-yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty perl-Encode-Detect
-rpm -U webmin-1.930-1.noarch.rpm
-#rpm -i webmin-1.801-1.noarch.rpm;
-rm webmin-1.930-1.noarch.rpm
-sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
-service webmin restart
-chkconfig webmin on
 
 # install openvpn
 yum -y install openvpn
