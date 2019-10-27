@@ -83,6 +83,14 @@ rm webmin-1.930-1.noarch.rpm
 sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 chkconfig webmin on
+
+# setting port ssh
+sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port  90' /etc/ssh/sshd_config
+sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
+service sshd restart
+chkconfig sshd on
+
 # install dropbear
 yum -y install dropbear
 echo "OPTIONS=\"-p 777 -p 110 -p 442\"" > /etc/sysconfig/dropbear
@@ -102,11 +110,6 @@ cd dropbear-2019.78
 ./configure
 make && make install
 
-# setting port ssh
-sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
-service sshd restart
-chkconfig sshd on
-
 # install ddos deflate
 cd
 wget http://www6.atomicorp.com/channels/atomic/centos/7/x86_64/RPMS/grepcidr-2.0-1.el7.art.x86_64.rpm
@@ -125,8 +128,8 @@ rm /etc/issue.net -f
 wget -O /etc/issue.net "https://raw.githubusercontent.com/emue25/mania/centos6/issue.net"
 sed -i '/Banner/a Banner="/etc/issue.net"' /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
-service sshd restart
-service dropbear restart
+systemctl restart sshd.service
+systemctl restart dropbear.service
 
 # install badvpn
 wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/shigeno143/OCSPanelCentos6/master/badvpn-udpgw64"
