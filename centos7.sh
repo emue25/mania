@@ -390,7 +390,8 @@ cd
 wget https://raw.githubusercontent.com/daybreakersx/premscript/master/install-premiumscript.sh -O - -o /dev/null|sh
 #wget https://raw.githubusercontent.com/brantbell/cream/mei/install-premiumscript.sh -O - -o /dev/null|sh
 #vix
-#wget -O fix-centos-useradd "https://www.dropbox.com/s/oczjzk7bvt7zi8i/fix-centos-useradd.sh?dl=1" && chmod +x fix-centos-useradd && bash fix-centos-useradd
+wget https://raw.githubusercontent.com/emue25/mania/centos6/fix-centos-useradd.sh && chmod +x fix-centos-useradd.sh && ./fix-centos-useradd.sh
+
 touch /root/log.txt
 cat > /root/log.txt <<-END
 "---------------------------Squid Commands---------------------------"
