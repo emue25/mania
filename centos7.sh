@@ -212,7 +212,34 @@ log openvpn.log
 verb 3
 cipher AES-256-CBC
 END
-
+cat > /etc/openvpn/server-udp.conf <<-END
+port 53
+proto udp
+dev tun
+tun-mtu 1500
+tun-mtu-extra 32
+mssfix 1450
+ca ca.crt
+cert server.crt
+key server.key
+dh dh2048.pem
+plugin /etc/openvpn/openvpn-plugin-auth-pam.so /etc/pam.d/login
+client-cert-not-required
+username-as-common-name
+server 10.8.0.0 255.255.255.0
+ifconfig-pool-persist ipp.txt
+push "redirect-gateway def1"
+push "dhcp-option DNS 1.1.1.1"
+push "dhcp-option DNS 1.0.0.1"
+push "route-method exe"
+push "route-delay 2"
+keepalive 5 30
+cipher AES-128-CBC
+comp-lzo
+persist-key
+persist-tun
+status server-vpn.log
+verb 3
 cd
 
 # create openvpn config
@@ -222,6 +249,7 @@ client
 dev tun
 proto tcp
 remote xxxxxxxxx 443
+http-proxy xxxxxxxxx 80
 persist-key
 persist-tun
 dev tun
