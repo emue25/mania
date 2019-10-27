@@ -1,6 +1,6 @@
 #!/bin/bash
 # Created by https://www.hostingtermurah.net
-# Modified by tacome9
+# Modified by by kopet
 
 #Requirement
 if [ ! -e /usr/bin/curl ]; then
@@ -65,11 +65,18 @@ yum -y install fail2ban
 service fail2ban restart
 chkconfig fail2ban on
 
+# install screenfetch
+cd
+wget -O /usr/bin/screenfetch "http://script.hostingtermurah.net/repo/screenfetch"
+chmod +x /usr/bin/screenfetch
+echo "clear" >> .bash_profile
+echo "screenfetch" >> .bash_profile
+
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 109 -p 110 -p 442\"" > /etc/sysconfig/dropbear
+echo "OPTIONS=\"-p 777 -p 110 -p 442\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
-firewall-cmd --zone=public --add-port=109/tcp --permanent
+firewall-cmd --zone=public --add-port=777/tcp --permanent
 firewall-cmd --zone=public --add-port=110/tcp --permanent
 firewall-cmd --zone=public --add-port=442/tcp --permanent
 firewall-cmd --reload
@@ -119,7 +126,17 @@ yum install screen -y
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 firewall-cmd --zone=public --add-port=7300/tcp --permanent
 firewall-cmd --reload
-
+cd
+#wget "http://script.hostingtermurah.net/repo/webmin-1.801-1.noarch.rpm"
+#yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty
+wget "http://prdownloads.sourceforge.net/webadmin/webmin-1.930-1.noarch.rpm"
+yum -y install perl perl-Net-SSLeay openssl perl-IO-Tty perl-Encode-Detect
+rpm -U webmin-1.930-1.noarch.rpm
+#rpm -i webmin-1.801-1.noarch.rpm;
+rm webmin-1.930-1.noarch.rpm
+sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
+service webmin restart
+chkconfig webmin on
 
 # install openvpn
 yum -y install openvpn
@@ -192,7 +209,7 @@ cd
 
 # create openvpn config
 cat > openvpn.ovpn <<-END
-#modified by tacome9
+#modified by kopet
 client
 dev tun
 proto tcp
@@ -364,11 +381,16 @@ refresh_pattern ^ftp:       1440    20% 10080
 refresh_pattern ^gopher:    1440    0%  1440
 refresh_pattern -i (/cgi-bin/|\?) 0 0%  0
 refresh_pattern .       0   20% 4320
-visible_hostname tacome
+visible_hostname kopet
 END
 sed -i $MYIP2 /etc/squid/squid.conf;
 
 cd
+# download script
+wget https://raw.githubusercontent.com/daybreakersx/premscript/master/install-premiumscript.sh -O - -o /dev/null|sh
+#wget https://raw.githubusercontent.com/brantbell/cream/mei/install-premiumscript.sh -O - -o /dev/null|sh
+#vix
+#wget -O fix-centos-useradd "https://www.dropbox.com/s/oczjzk7bvt7zi8i/fix-centos-useradd.sh?dl=1" && chmod +x fix-centos-useradd && bash fix-centos-useradd
 touch /root/log.txt
 cat > /root/log.txt <<-END
 "---------------------------Squid Commands---------------------------"
@@ -426,7 +448,7 @@ echo "      change passwd:    # echo "username:password" | chpasswd       "
 echo "          to remove:    # userdel username                          "
 echo "--------------------------------------------------------------------"
 echo "Application & Port Information"
-echo "   - OpenVPN     : TCP 1194 "
+echo "   - OpenVPN     : TCP 443 "
 echo "   - OpenSSH     : 22, 143, 90"
 echo "   - Dropbear    : 109, 110, 442"
 echo "   - Squid Proxy : 80, 8000, 8080, 8888, 3128 (limit to IP Server)" 
