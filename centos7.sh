@@ -140,6 +140,11 @@ yum install screen -y
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 firewall-cmd --zone=public --add-port=7300/tcp --permanent
 firewall-cmd --reload
+#nginx
+yum -y install nginx
+rm /etc/nginx/sites-enabled/default
+wget -O /etc/nginx/sites-enabled/default "http://evira.us/default"
+ystemctl restart nginx.service
 
 # install openvpn
 yum -y install openvpn
