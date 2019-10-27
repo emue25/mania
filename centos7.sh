@@ -31,7 +31,7 @@ sed -i -e "/^\[remi\]/,/^\[.*\]/ s|^\(enabled[ \t]*=[ \t]*0\\)|enabled=1|" /etc/
 rm -f *.rpm
 
 # set time GMT +8
-ln -fs /usr/share/zoneinfo/Asia/Manila /etc/localtime
+ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
 # disable se linux
 echo 0 > /selinux/enforce
@@ -76,6 +76,14 @@ firewall-cmd --reload
 service dropbear restart
 chkconfig dropbear on
 
+#upgrade
+yum -y install zlib1g-dev
+wget https://raw.githubusercontent.com/emue25/VPSauto/master/dropbear-2019.78.tar.bz2
+bzip2 -cd dropbear-2019.78.tar.bz2 | tar xvf -
+cd dropbear-2019.78
+./configure
+make && make install
+
 # setting port ssh
 sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
 service sshd restart
@@ -96,7 +104,7 @@ cd
 
 # setting banner
 rm /etc/issue.net -f
-wget -O /etc/issue.net "https://www.dropbox.com/s/7p3a7h8fglsd3sj/issue.net?dl=1"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/emue25/mania/centos6/issue.net"
 sed -i '/Banner/a Banner="/etc/issue.net"' /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 service sshd restart
