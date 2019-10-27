@@ -72,15 +72,6 @@ chmod +x /usr/bin/screenfetch
 echo "clear" >> .bash_profile
 echo "screenfetch" >> .bash_profile
 
-#webmin
-cd
-wget "https://github.com/emue25/VPSauto/raw/master/webmin_1.930_all.deb"
-dpkg --install webmin_1.930_all.deb;
-apt-get -y -f install;
-sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
-rm /root/webmin_1.930_all.deb
-service webmin restart
-
 
 # setting port ssh
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
