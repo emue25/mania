@@ -91,13 +91,6 @@ firewall-cmd --reload
 service dropbear restart
 chkconfig dropbear on
 
-#upgrade
-yum -y install zlib1g-dev
-wget https://raw.githubusercontent.com/emue25/VPSauto/master/dropbear-2019.78.tar.bz2
-bzip2 -cd dropbear-2019.78.tar.bz2 | tar xvf -
-cd dropbear-2019.78
-./configure
-make && make install
 
 # install ddos deflate
 cd
