@@ -294,8 +294,8 @@ cd
 #Create OpenVPN Config
 mkdir -p /home/vps/public_html
 cat > /home/vps/public_html/client.ovpn <<-END
-# OpenVPN Configuration Dibuat Oleh HostingTermurah.net
-# (Official Partner VPS-Murah.net)
+# OpenVPN Configuration Dibuat Oleh sshfast.net & vpnstunnel.com
+# creator by DENBAGUSS
 client
 dev tun
 proto tcp
@@ -397,7 +397,7 @@ chkconfig sshd on
 
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 109 -p 110 -p 443\"" > /etc/sysconfig/dropbear
+echo "OPTIONS=\"-p 109 -p 110 -p 442\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
@@ -461,7 +461,7 @@ refresh_pattern ^ftp: 1440 20% 10080
 refresh_pattern ^gopher: 1440 0% 1440
 refresh_pattern -i (/cgi-bin/|\?) 0 0% 0
 refresh_pattern . 0 20% 4320
-visible_hostname Proxy.HostingTermurah.net
+visible_hostname Proxy.sshfast.ner
 END
 sed -i $MYIP2 /etc/squid/squid.conf;
 service squid restart
@@ -521,8 +521,8 @@ wget https://raw.githubusercontent.com/daybreakersx/premscript/master/install-pr
 service crond start
 chkconfig crond on
 
-# set time GMT +7
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+# set time GMT +8
+ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
 # finalisasi
 chown -R nginx:nginx /home/vps/public_html
@@ -546,13 +546,13 @@ echo " "
 echo "Instaslasi telah selesai! Mohon baca dan simpan penjelasan setup server!"
 echo " "
 echo "--------------------------- Penjelasan Setup Server ----------------------------"
-echo "                         Copyright HostingTermurah.net                          "
-echo "                        https://www.hostingtermurah.net                         "
-echo "               Created By Steven Indarto(fb.com/stevenindarto2)                 "
+echo "                         Copyright sshfast.net                         "
+echo "                        https://www.sshfast.net                         "
+echo "                            Created By DENBAGUSS                 "
 echo "--------------------------------------------------------------------------------"
 echo ""  | tee -a log-install.txt
 echo "Informasi Server"  | tee -a log-install.txt
-echo "   - Timezone    : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
+echo "   - Timezone    : Asia/Kuala_Lumpur (GMT +8)"  | tee -a log-install.txt
 echo "   - Fail2Ban    : [on]"  | tee -a log-install.txt
 echo "   - IPtables    : [on]"  | tee -a log-install.txt
 echo "   - Auto-Reboot : [off]"  | tee -a log-install.txt
@@ -589,4 +589,4 @@ echo "   - MRTG                    : http://$MYIP:85/mrtg/"  | tee -a log-instal
 echo "   - Log Instalasi           : cat /root/log-install.txt"  | tee -a log-install.txt
 echo "     NB: User & Password Webmin adalah sama dengan user & password root"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "----------- Script Created By Steven Indarto(fb.com/stevenindarto2) ------------"
+echo "-----------         Script Created By (DENBAGUSS) ------------"
