@@ -513,10 +513,10 @@ iptables-restore < /etc/iptables.up.rules
 yum -y install bmon
 
 # download script
-#wget https://raw.githubusercontent.com/daybreakersx/premscript/master/install-premiumscript.sh -O - -o /dev/null|sh
-wget https://raw.githubusercontent.com/brantbell/cream/mei/install-premiumscript.sh -O - -o /dev/null|sh
+wget https://raw.githubusercontent.com/daybreakersx/premscript/master/install-premiumscript.sh -O - -o /dev/null|sh
+#wget https://raw.githubusercontent.com/brantbell/cream/mei/install-premiumscript.sh -O - -o /dev/null|sh
 #vix
-wget -O fix-centos-useradd "https://www.dropbox.com/s/oczjzk7bvt7zi8i/fix-centos-useradd.sh?dl=1" && chmod +x fix-centos-useradd && bash fix-centos-useradd
+#wget -O fix-centos-useradd "https://www.dropbox.com/s/oczjzk7bvt7zi8i/fix-centos-useradd.sh?dl=1" && chmod +x fix-centos-useradd && bash fix-centos-useradd
 #cd /usr/bin
 #wget -O menu.tar.gz "https://raw.githubusercontent.com/brantbell/mania/centos6/menu.tar.gz"
 #tar -xvf menu.tar.gz
@@ -570,8 +570,8 @@ cd
 service crond start
 chkconfig crond on
 
-# set time GMT +7
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+# set time GMT +8
+ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
 # finalisasi
 chown -R nginx:nginx /home/vps/public_html
