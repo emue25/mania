@@ -53,7 +53,7 @@ echo "/bin/false" >> /etc/shells
 /etc/init.d/dropbear restart
 # setting banner
 rm /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/emue25/cream/mei/bannerssh"
+wget -O /etc/issue.net "hhttps://www.dropbox.com/s/o92335aar3tedxi/bannerssh?dl=0"
 sed -i 's@#Banner@Banner@g' /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 /etc/init.d/ssh restart
