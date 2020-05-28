@@ -7,7 +7,7 @@ clear
 echo ""
 echo ""
 echo ""
-wget --quiet -O iplist.txt https://raw.githubusercontent.com/Broadcast-Team/Script_Debian9_x64_2020/master/Debian_9/iplist.txt
+wget --quiet -O iplist.txt https://raw.githubusercontent.com/emue25/mania/centos6/iplist.txt
 flag=0
 echo -e "${green}Connecting to Server...${NC}"
 sleep 1
@@ -30,10 +30,10 @@ echo ""
 echo -e "${green}IP address accepted!${NC}";
 echo ""
 echo ""
-echo "          -----[WELCOME TO BLACK-TEAM™ PREMIUM SCRIPT]-----  "
+echo "          -----[WELCOME TO BLACK-MAMBA™ PREMIUM SCRIPT]-----  "
 echo "        ====================================================="
-echo "        #            Telegram : @blackitsupport             #"
-echo "        #       Copyright: © BLACK-TEAM™ Premium 2020       #"
+echo "        #            Telegram : @black mamba                 #"
+echo "        #       Copyright: © BLACK-MAMBA™ Premium 2020       #"
 echo "        ====================================================="
 echo ""
 echo ""
@@ -59,7 +59,7 @@ echo ""
 echo -e "${green}Please contact your network administrator to access this service at
 telegram: @blackitsupport ${NC} 												  "
 echo "============================================================================"
-rm -f /root/Debian9
+rm -f /root/debi9
 rm -f /root/iplist.txt
 exit 1
 fi
